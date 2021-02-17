@@ -1,7 +1,8 @@
-package com.example.android_pemula_traditional_dance
+package com.example.android_pemula_traditional_dance.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android_pemula_traditional_dance.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
