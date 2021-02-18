@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NariKuy</string>
+    <string name="image_dance_photo">image_dance_photo</string>
+    <string name="traditional_name">Traditional Name</string>
 </resources>

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.android_pemula_traditional_dance"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -31,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
