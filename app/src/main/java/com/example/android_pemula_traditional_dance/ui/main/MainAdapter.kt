@@ -1,24 +1,29 @@
 package com.example.android_pemula_traditional_dance.ui.main
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
+import androidx.core.util.Pair.create
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_pemula_traditional_dance.R
 import com.example.android_pemula_traditional_dance.data.TraditionalDance
 import com.example.android_pemula_traditional_dance.databinding.ItemRowDanceBinding
+import com.example.android_pemula_traditional_dance.ui.detail.DetailActivity
 import com.example.android_pemula_traditional_dance.util.load
 
 class MainAdapter(
     private val context: Context,
-    private val traditionalDanceList : List<TraditionalDance>
+    private val traditionalDanceList: List<TraditionalDance>
 ) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     private lateinit var mainActivity: MainActivity
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding : ItemRowDanceBinding = ItemRowDanceBinding.bind(itemView)
+        val binding: ItemRowDanceBinding = ItemRowDanceBinding.bind(itemView)
 
         fun bind(data: TraditionalDance) {
             with(binding) {
@@ -26,13 +31,23 @@ class MainAdapter(
                 txtName.text = data.name
                 txtPlaceOfOrigin.text = data.placeOfOrigin
                 txtDescription.text = data.description
+
+                val imageViewPair = Pair.create<View, String>(imgDancePhoto, "imageDance")
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(mainActivity, imageViewPair)
+
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                        .apply { putExtra(DetailActivity.EXTRA_TRADITIONAL_DANCE, data) }
+                        .also { itemView.context.startActivity(it, options.toBundle()) }
+                }
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_row_dance, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.item_row_dance, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

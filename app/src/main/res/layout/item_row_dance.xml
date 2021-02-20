@@ -10,6 +10,7 @@
         android:id="@+id/imgDancePhoto"
         android:layout_width="130dp"
         android:layout_height="180dp"
+        android:transitionName="@string/imgDance"
         android:scaleType="centerCrop"
         android:contentDescription="@string/image_dance_photo"
         app:layout_constraintStart_toStartOf="parent"
