@@ -33,6 +33,7 @@ class DetailActivity : AppCompatActivity() {
             txtDanceDescription.text = data?.description
 
             with(rvDanceImages) {
+                setHasFixedSize(true)
                 val listImagesAdapter = DetailAcvitiyAdapter(data?.images!!, this@DetailActivity)
                 layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
 

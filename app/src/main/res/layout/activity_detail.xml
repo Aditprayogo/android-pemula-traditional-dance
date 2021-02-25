@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.DetailActivity"
-    android:background="@color/purple_500">
+    android:background="@color/colorPrimary"
+    tools:context=".ui.detail.DetailActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fillViewport="true">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,11 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="150dp"
+                android:background="@drawable/bg_card_detail"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingTop="160dp"
-                android:paddingBottom="16dp"
-                android:background="@drawable/bg_card_detail">
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp">
 
                 <View
                     android:id="@+id/viewInformation"
@@ -59,6 +59,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvDanceImages"
                     android:layout_width="0dp"
@@ -74,12 +75,15 @@
                 android:id="@+id/imgDance"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
-                android:scaleType="centerCrop"
-                android:transitionName="@string/imgDance"
-                android:contentDescription="@string/img_cover_detail"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="32dp"
-                />
+                android:contentDescription="@string/img_cover_detail"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/imgDance" />
 
         </RelativeLayout>
 

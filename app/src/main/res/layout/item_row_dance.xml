@@ -38,7 +38,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:textColor="@color/colorTextBold"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/imgDancePhoto"
         app:layout_constraintTop_toBottomOf="@+id/txtName"
         tool:text="Place of origin" />
@@ -53,7 +53,7 @@
         android:ellipsize="end"
         android:maxLines="3"
         android:textColor="@color/colorTextBold"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgDancePhoto"
         app:layout_constraintTop_toBottomOf="@+id/txtPlaceOfOrigin"

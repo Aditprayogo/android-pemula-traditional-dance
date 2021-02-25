@@ -8,16 +8,17 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory
 
-fun ImageView.load(imageSource : Any?, radius : Int = 16) {
+fun ImageView.load(imageSource: Any?, radius: Int = 16) {
     Glide.with(context.applicationContext)
         .load(imageSource)
         .transition(DrawableTransitionOptions.withCrossFade(getDrawableFactory()))
         .apply(
-            RequestOptions().transform(CenterCrop(), RoundedCorners(radius))
+            RequestOptions()
+                .transform(CenterCrop(), RoundedCorners(radius))
         )
         .into(this)
 }
 
-private fun getDrawableFactory() : DrawableCrossFadeFactory {
+private fun getDrawableFactory(): DrawableCrossFadeFactory {
     return DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
 }

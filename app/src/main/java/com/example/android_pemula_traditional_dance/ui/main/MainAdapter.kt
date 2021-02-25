@@ -32,13 +32,10 @@ class MainAdapter(
                 txtPlaceOfOrigin.text = data.placeOfOrigin
                 txtDescription.text = data.description
 
-                val imageViewPair = Pair.create<View, String>(imgDancePhoto, "imageDance")
-                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(mainActivity, imageViewPair)
-
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)
                         .apply { putExtra(DetailActivity.EXTRA_TRADITIONAL_DANCE, data) }
-                        .also { itemView.context.startActivity(it, options.toBundle()) }
+                        .also { itemView.context.startActivity(it) }
                 }
             }
         }
