@@ -3,7 +3,6 @@ package com.example.android_pemula_traditional_dance.ui.detail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.android_pemula_traditional_dance.data.TraditionalDance
 import com.example.android_pemula_traditional_dance.databinding.ActivityDetailBinding
 import com.example.android_pemula_traditional_dance.util.load

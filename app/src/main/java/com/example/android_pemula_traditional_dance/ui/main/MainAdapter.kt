@@ -5,9 +5,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityOptionsCompat
-import androidx.core.util.Pair
-import androidx.core.util.Pair.create
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_pemula_traditional_dance.R
 import com.example.android_pemula_traditional_dance.data.TraditionalDance
@@ -23,7 +20,7 @@ class MainAdapter(
     private lateinit var mainActivity: MainActivity
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding: ItemRowDanceBinding = ItemRowDanceBinding.bind(itemView)
+        private val binding: ItemRowDanceBinding = ItemRowDanceBinding.bind(itemView)
 
         fun bind(data: TraditionalDance) {
             with(binding) {

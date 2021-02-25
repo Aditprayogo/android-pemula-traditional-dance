@@ -15,7 +15,7 @@ class DetailAcvitiyAdapter(private val listImages: List<Int>, private val contex
     private lateinit var detailActivity: DetailActivity
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding : ItemRowDetailImagesBinding = ItemRowDetailImagesBinding.bind(itemView)
+        private val binding : ItemRowDetailImagesBinding = ItemRowDetailImagesBinding.bind(itemView)
 
         fun bind(data : Int) {
             binding.ivImages.load(data)

@@ -1,10 +1,9 @@
 package com.example.android_pemula_traditional_dance.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android_pemula_traditional_dance.R
 import com.example.android_pemula_traditional_dance.data.TraditionalDanceData
 import com.example.android_pemula_traditional_dance.databinding.ActivityMainBinding
 

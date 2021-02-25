@@ -4,17 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tool="http://schemas.android.com/tools"
-    android:layout_marginBottom="@dimen/margin_16">
+    android:layout_marginBottom="@dimen/dimen_8"
+    android:paddingBottom="@dimen/dimen_8">
 
-    <ImageView
-        android:id="@+id/imgDancePhoto"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPhoto"
         android:layout_width="130dp"
-        android:layout_height="180dp"
-        android:transitionName="@string/imgDance"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/image_dance_photo"
+        android:layout_height="190dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="@dimen/dimen_8"
+        app:cardCornerRadius="@dimen/dimen_8">
+
+        <ImageView
+            android:id="@+id/imgDancePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:transitionName="@string/imgDance"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_dance_photo"
+            />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/txtName"
@@ -27,7 +38,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgDancePhoto"
+        app:layout_constraintStart_toEndOf="@+id/cardViewPhoto"
         app:layout_constraintTop_toTopOf="parent"
         tool:text="@string/traditional_name" />
 
@@ -39,7 +50,7 @@
         android:layout_marginTop="16dp"
         android:textColor="@color/colorTextBold"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/imgDancePhoto"
+        app:layout_constraintStart_toEndOf="@+id/cardViewPhoto"
         app:layout_constraintTop_toBottomOf="@+id/txtName"
         tool:text="Place of origin" />
 
@@ -55,7 +66,7 @@
         android:textColor="@color/colorTextBold"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgDancePhoto"
+        app:layout_constraintStart_toEndOf="@+id/cardViewPhoto"
         app:layout_constraintTop_toBottomOf="@+id/txtPlaceOfOrigin"
         tool:text="Place of origin" />
 
