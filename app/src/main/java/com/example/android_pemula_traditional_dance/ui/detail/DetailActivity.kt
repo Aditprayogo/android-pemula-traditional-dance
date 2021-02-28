@@ -34,9 +34,9 @@ class DetailActivity : AppCompatActivity() {
             with(rvDanceImages) {
                 setHasFixedSize(true)
                 val listImagesAdapter = DetailAcvitiyAdapter(data?.images!!, this@DetailActivity)
-                layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
-
                 listImagesAdapter.setActivity(this@DetailActivity)
+
+                layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
                 adapter = listImagesAdapter
             }
 
