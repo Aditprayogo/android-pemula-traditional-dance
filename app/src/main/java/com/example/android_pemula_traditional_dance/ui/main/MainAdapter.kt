@@ -2,9 +2,13 @@ package com.example.android_pemula_traditional_dance.ui.main
 
 import android.content.Context
 import android.content.Intent
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_pemula_traditional_dance.R
 import com.example.android_pemula_traditional_dance.data.TraditionalDance
@@ -26,13 +30,23 @@ class MainAdapter(
             with(binding) {
                 imgDancePhoto.load(data.image)
                 txtName.text = data.name
-                txtPlaceOfOrigin.text = data.placeOfOrigin
+                txtPlaceOfOrigin.text = """From ${data.placeOfOrigin}"""
                 txtDescription.text = data.description
 
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DetailActivity::class.java)
-                        .apply { putExtra(DetailActivity.EXTRA_TRADITIONAL_DANCE, data) }
-                        .also { itemView.context.startActivity(it) }
+                    val imagePair = Pair.create<View, String>(
+                        binding.imgDancePhoto,
+                        context.getString(R.string.imgDance)
+                    )
+                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        mainActivity,
+                        imagePair,
+                    )
+                    itemView.context.startActivity(
+                        Intent(itemView.context, DetailActivity::class.java)
+                            .apply { putExtra(DetailActivity.EXTRA_TRADITIONAL_DANCE, data) },
+                        options.toBundle()
+                    )
                 }
             }
         }

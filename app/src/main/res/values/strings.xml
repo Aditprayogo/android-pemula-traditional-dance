@@ -7,4 +7,14 @@
     <string name="imgDance">imageDance</string>
     <string name="created_by_aditiya_prayogo">Created by : Aditiya Prayogo</string>
     <string name="imagedancedetail">imageDanceDetail</string>
+    <string name="profile">My Profile</string>
+    <string name="my_profile">Profile</string>
+    <string name="information">Information</string>
+    <string name="name">Name :</string>
+    <string name="aditiya_ihzar_eka_prayogo">Aditiya Ihzar Eka Prayogo</string>
+    <string name="email">Email :</string>
+    <string name="adit_ihzar_gmail_com">adit.ihzar@gmail.com</string>
+    <string name="github">Github :</string>
+    <string name="aditprayogo">aditPrayogo</string>
+    <string name="danceDescription">danceDescription</string>
 </resources>
