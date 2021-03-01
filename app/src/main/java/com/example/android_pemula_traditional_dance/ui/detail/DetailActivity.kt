@@ -33,10 +33,9 @@ class DetailActivity : AppCompatActivity() {
 
             with(rvDanceImages) {
                 setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
                 val listImagesAdapter = DetailAcvitiyAdapter(data?.images!!, this@DetailActivity)
                 listImagesAdapter.setActivity(this@DetailActivity)
-
-                layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
                 adapter = listImagesAdapter
             }
 
@@ -44,8 +43,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupUi() {
-        supportActionBar?.elevation = 0f
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.apply {
+            elevation = 0f
+            setDisplayHomeAsUpEnabled(true)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

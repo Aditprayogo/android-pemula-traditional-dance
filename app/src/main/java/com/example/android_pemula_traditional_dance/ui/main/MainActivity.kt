@@ -27,10 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         with(rvDance) {
             setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@MainActivity)
             val listDanceAdapter = MainAdapter(this@MainActivity, listTraditionalDance)
             listDanceAdapter.setActivity(this@MainActivity)
-
-            layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = listDanceAdapter
         }
     }
