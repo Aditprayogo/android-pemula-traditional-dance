@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.profile.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/img_cover_detail"
+        android:scaleType="centerCrop"
+        android:transitionName="@string/imgDance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="320dp"
+                android:background="@drawable/bg_card_detail"
+                android:paddingStart="16dp"
+                android:paddingTop="25dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp">
+
+                <View
+                    android:id="@+id/viewInformation"
+                    android:layout_width="5dp"
+                    android:layout_height="27dp"
+                    android:background="@color/purple_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/information"
+                    android:textColor="@color/colorTextBold"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewInformation"
+                    app:layout_constraintStart_toEndOf="@+id/viewInformation"
+                    app:layout_constraintTop_toTopOf="@+id/viewInformation" />
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/name"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/txtNameInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+                    android:text="@string/aditiya_ihzar_eka_prayogo"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtName"
+                    app:layout_constraintStart_toEndOf="@+id/txtName"
+                    app:layout_constraintTop_toTopOf="@+id/txtName" />
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/email"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/txtName"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+                <TextView
+                    android:id="@+id/txtEmailInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+                    android:text="@string/adit_ihzar_gmail_com"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
+                    app:layout_constraintStart_toEndOf="@+id/txtEmail"
+                    app:layout_constraintTop_toTopOf="@+id/txtEmail" />
+
+                <TextView
+                    android:id="@+id/txtGithub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/github"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/txtEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+                <TextView
+                    android:id="@+id/txtGithubInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+                    android:text="@string/aditprayogo"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtGithub"
+                    app:layout_constraintStart_toEndOf="@+id/txtGithub"
+                    app:layout_constraintTop_toTopOf="@+id/txtGithub" />
+
+                <TextView
+                    android:id="@+id/txtLinkedin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Linkedin :"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/txtGithub"
+                    app:layout_constraintTop_toBottomOf="@+id/txtGithub" />
+
+                <TextView
+                    android:id="@+id/txtLinkedinInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+                    android:text="@string/aditiya_ihzar_eka_prayogo"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtLinkedin"
+                    app:layout_constraintStart_toEndOf="@+id/txtLinkedin"
+                    app:layout_constraintTop_toTopOf="@+id/txtLinkedin" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
