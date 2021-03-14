@@ -9,7 +9,10 @@ import com.example.android_pemula_traditional_dance.R
 import com.example.android_pemula_traditional_dance.databinding.ItemRowDetailImagesBinding
 import com.example.android_pemula_traditional_dance.util.load
 
-class DetailAcvitiyAdapter(private val listImages: List<Int>, private val context: Context) :
+class DetailAcvitiyAdapter(
+    private val listImages: List<Int>,
+    private val context: Context
+) :
     RecyclerView.Adapter<DetailAcvitiyAdapter.ViewHolder>() {
 
     private lateinit var detailActivity: DetailActivity
@@ -32,7 +35,7 @@ class DetailAcvitiyAdapter(private val listImages: List<Int>, private val contex
     }
 
     override fun onBindViewHolder(holder: DetailAcvitiyAdapter.ViewHolder, position: Int) {
-        holder.bind(listImages[position])
+        holder.bind(listImages.get(position))
     }
 
     override fun getItemCount(): Int = listImages.size

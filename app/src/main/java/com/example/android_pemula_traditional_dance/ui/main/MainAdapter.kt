@@ -33,20 +33,26 @@ class MainAdapter(
                 txtPlaceOfOrigin.text = """From ${data.placeOfOrigin}"""
                 txtDescription.text = data.description
 
-                itemView.setOnClickListener {
-                    val imagePair = Pair.create<View, String>(
-                        binding.imgDancePhoto,
-                        context.getString(R.string.imgDance)
-                    )
-                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                        mainActivity,
-                        imagePair,
-                    )
-                    itemView.context.startActivity(
-                        Intent(itemView.context, DetailActivity::class.java)
-                            .apply { putExtra(DetailActivity.EXTRA_TRADITIONAL_DANCE, data) },
-                        options.toBundle()
-                    )
+                with(itemView) {
+                    setOnClickListener {
+                        val imagePair = Pair.create<View, String>(
+                            binding.imgDancePhoto,
+                            context.getString(R.string.imgDance)
+                        )
+                        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                            mainActivity,
+                            imagePair,
+                        )
+                        context.startActivity(
+                            Intent(
+                                context,
+                                DetailActivity::class.java
+                            ).apply {
+                                putExtra(DetailActivity.EXTRA_TRADITIONAL_DANCE, data)
+                            },
+                            options.toBundle()
+                        )
+                    }
                 }
             }
         }

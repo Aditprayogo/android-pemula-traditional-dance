@@ -13,7 +13,7 @@ class DetailActivity : AppCompatActivity() {
         const val EXTRA_TRADITIONAL_DANCE = "extra_traditional_dance"
     }
 
-    private val binding : ActivityDetailBinding by lazy {
+    private val binding: ActivityDetailBinding by lazy {
         ActivityDetailBinding.inflate(layoutInflater)
     }
 
@@ -26,6 +26,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setupData() {
         val data = intent.getParcelableExtra<TraditionalDance>(EXTRA_TRADITIONAL_DANCE)
+
         with(binding) {
             imgDance.load(data?.image)
             supportActionBar?.title = data?.name
@@ -33,9 +34,11 @@ class DetailActivity : AppCompatActivity() {
 
             with(rvDanceImages) {
                 setHasFixedSize(true)
-                layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
-                val listImagesAdapter = DetailAcvitiyAdapter(data?.images!!, this@DetailActivity)
-                listImagesAdapter.setActivity(this@DetailActivity)
+                layoutManager =
+                    LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
+                val listImagesAdapter =
+                    data?.images?.let { DetailAcvitiyAdapter(it, this@DetailActivity) }
+                listImagesAdapter?.setActivity(this@DetailActivity)
                 adapter = listImagesAdapter
             }
 
